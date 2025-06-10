@@ -1,0 +1,118 @@
+/* Reset & base --------------------------------------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Poppins", system-ui, sans-serif;
+   background: linear-gradient(135deg, #cf9aff, #95c0ff);
+}
+
+/* Layout --------------------------------------------------------- */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90%;
+  padding: 2rem;
+  background: linear-gradient(135deg, #cf9aff, #95c0ff);
+}
+
+/* Card ----------------------------------------------------------- */
+.calculator {
+  width: min(100%, 420px);
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.heading{
+  text-align: center;
+  color: #ffeb7f;
+  margin-top: 20px;
+}
+
+.calculator h1::first-line {
+  color: #ffeb7f; /* Yellow */
+}
+
+/* Title ---------------------------------------------------------- */
+.calculator h1 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  
+  
+}
+
+.agecal {
+  display: block;
+  font-weight: 300;
+  font-size: 0.8em;
+}
+
+/* Input / Button ------------------------------------------------- */
+.input-box {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.input-box input[type="date"] {
+  flex: 1 1 11rem;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #333;
+  background: #fff;
+  outline-color: #6b5bff;
+}
+
+.input-box button {
+  flex: 1 1 8rem;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  background: #6b5bff;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.input-box button:hover,
+.input-box button:focus-visible {
+  background: #594bff;
+  transform: translateY(-2px);
+}
+
+/* Result text ---------------------------------------------------- */
+#result {
+  margin-top: 1.8rem;
+  font-size: 1.2rem;
+  min-height: 1.2em; /* keeps layout steady before result shows */
+}
+
+/* Responsive tweaks --------------------------------------------- */
+@media (max-width: 480px) {
+  .calculator {
+    padding: 2rem;
+  }
+  .input-box {
+    gap: 0.6rem;
+  }
+}
